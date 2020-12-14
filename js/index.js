@@ -128,7 +128,7 @@ const playSound = (fileName) => {
     const audio = document.getElementById(fileName);
 
     if (audio.paused) {
-        audio.volume = 0.5;
+        audio.volume = 0.3;
         audio.play();
     } else {
         audio.pause();
