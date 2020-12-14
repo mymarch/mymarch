@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Good luck 2021" />
+        <meta property="og:url" content="http://daumkakao.com" />
+        <meta property="og:description" content="길함" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"
+        />
+        <link rel="stylesheet" href="css/index.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.js"
+            integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <div class="main_con">
+            <div class="header_img">
+                <img class="main_logo" src="img/index/logo.png" />
+            </div>
+            <div class="sub_con">
+                <p class="sub_st">
+                    색의 속성을 기반으로 한 자신의 현재 의식과 무의식 상태를
+                    알아보는 테스트입니다.
+                </p>
+                <!-- <p class="sub_t">12 colors</p> -->
+                <!-- <img class="sub_t" src="img/index/12colors.png" /> -->
+                <img class="sub_line" src="img/index/line.png" />
+            </div>
+            <div class="sub_con">
+                <div class="circle_con" id="circle_before_con">
+                    <div class="circle_box">
+                        <div class="circle c_before" id="red"></div>
+                        <p class="circle_t">red</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="green"></div>
+                        <p class="circle_t">green</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="blue"></div>
+                        <p class="circle_t">blue</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="yellow"></div>
+                        <p class="circle_t">yellow</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="pink"></div>
+                        <p class="circle_t">pink</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="turquoise"></div>
+                        <p class="circle_t">turquoise</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="magenta"></div>
+                        <p class="circle_t">magenta</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="violet"></div>
+                        <p class="circle_t">violet</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="gold"></div>
+                        <p class="circle_t">gold</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="indigo"></div>
+                        <p class="circle_t">indigo</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="white"></div>
+                        <p class="circle_t">white</p>
+                    </div>
+                    <div class="circle_box">
+                        <div class="circle c_before" id="orange"></div>
+                        <p class="circle_t">orange</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sub_con">
+                <p class="info_t inft_t_con">
+                    상단에 보여지는 12개의 컬러를 가장 눈에 띄는 순서대로
+                    클릭해주세요.
+                </p>
+                <p class="info_t">Click on colors in order what you want</p>
+            </div>
+            <div class="sub_con sub_arrow_con">
+                <img class="sub_arrow" src="img/index/arrow.png" />
+            </div>
+            <div class="sub_con">
+                <p class="info_t inft_t_con">
+                    컬러를 다시 클릭하면 취소됩니다.
+                </p>
+            </div>
+            <div class="sub_con">
+                <div class="circle_con" id="circle_after_con">
+                    <!-- 선택한 컬러 배치 -->
+                </div>
+            </div>
+            <div class="sub_con result_btn_con">
+                <div class="btn" id="result_btn">
+                    <!-- 결과확인 버튼 -->
+                    결과<br />확인하기
+                </div>
+            </div>
+            <div class="sub_con" id="result_con">
+                <p class="info_bt">테스트 결과</p>
+                <div id="info_st_m">
+                    <p class="info_st">
+                        아래의 6가지 컬러들은 현재 당신의 의식과 무의식 상태<br />
+                        그리고 감정들을 알 수 있게 도와줍니다.
+                    </p>
+                    <p class="info_st">
+                        테스트에 대한 결과지와 현재 당신에게 필요한 컬러의
+                        소품은<br />
+                        우편으로 받아보실 수 있습니다.
+                    </p>
+                </div>
+                <div id="info_st_p">
+                    <p class="info_st">
+                        아래의 6가지 컬러들은 현재 당신의 의식과 무의식 상태
+                        그리고 감정들을 알 수 있게 도와줍니다.
+                    </p>
+                    <p class="info_st">
+                        테스트에 대한 결과지와 현재 당신에게 필요한 컬러의
+                        소품은 우편으로 받아보실 수 있습니다.
+                    </p>
+                </div>
+            </div>
+            <div class="sub_con">
+                <div class="circle_con" id="circle_result_con">
+                    <!-- 결과 컬러 배치 -->
+                </div>
+            </div>
+            <div class="sub_con restart_btn_con">
+                <div class="btn" id="restart_btn">
+                    <!-- 다시하기 버튼 -->
+                    테스트 다시하기
+                </div>
+            </div>
+            <div class="footer_con">
+                <p class="footer_ct">ⓒ2020 mymarch All rights reserved.</p>
+                <p class="footer_t">
+                    현재 테스트에서는 블랙 그레이 브라운 등의 무채색 계열은<br />
+                    제외되어 있습니다.
+                </p>
+            </div>
+        </div>
+        <div class="hidden_con">
+            <audio id="click_sound" src="./sound/click.mp3"></audio>
+            <audio id="result_sound" src="./sound/result.mp3"></audio>
+        </div>
+    </body>
+</html>
