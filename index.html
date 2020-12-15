@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mymarch.github.io/mymarch/" />
         <meta property="og:title" content="Good luck 2021" />
         <meta property="og:description" content="길함" />
-        <meta property="og:url" content="https://mymarch.github.io/mymarch/" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"
         />
         <link rel="stylesheet" href="css/index.css" />
         <script
-            src="https://code.jquery.com/jquery-3.5.1.slim.js"
-            integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+            src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
             crossorigin="anonymous"
         ></script>
         <script src="js/index.js"></script>
@@ -139,6 +141,19 @@
                     <!-- 결과 컬러 배치 -->
                 </div>
             </div>
+            <div class="sub_con hidden_con" id="send_email_con">
+                <p>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="이메일 주소를 입력해주세요."
+                    />
+                </p>
+                <div class="btn" id="send_email_btn">
+                    <!-- 다시하기 버튼 -->
+                    결과 전송하기
+                </div>
+            </div>
             <div class="sub_con restart_btn_con">
                 <div class="btn" id="restart_btn">
                     <!-- 다시하기 버튼 -->
@@ -151,6 +166,12 @@
                     현재 테스트에서는 블랙 그레이 브라운 등의 무채색 계열은<br />
                     제외되어 있습니다.
                 </p>
+            </div>
+        </div>
+        <div class="hidden_con" id="loading_con">
+            <div class="loading">
+                <img src="./img/index/loading.gif" />
+                <p>결과 전송중입니다.</p>
             </div>
         </div>
         <div class="hidden_con">
