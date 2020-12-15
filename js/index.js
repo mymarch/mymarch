@@ -1,5 +1,6 @@
 $(document).ready(function () {
     sessionStorage.removeItem("selectArray");
+    sessionStorage.removeItem("resArray");
 });
 
 $(document).on("click", ".c_before", function () {
@@ -22,6 +23,21 @@ $(document).on("click", "#result_btn", function () {
 $(document).on("click", "#restart_btn", function () {
     if (confirm("테스트를 처음부터 진행 하시겠습니까?"))
         handlerClickRestartBtn();
+});
+
+$(document).on("click", "#send_email_btn", function () {
+    const email = $("#email").val();
+    const res = sessionStorage.getItem("resArray");
+
+    if (email.replace(/ /gi, "") === "") {
+        alert("이메일을 입력해주세요!");
+        $("#email").focus();
+        return;
+    }
+
+    if (confirm("결과를 전송하시겠습니까?")) {
+        handlerClickSendEmailBtn(email, res);
+    }
 });
 
 const handlerClickCircleAdd = (id) => {
@@ -102,6 +118,8 @@ const handlerClickResultBtn = () => {
         resultArray.push(colorArray[rn]);
     }
 
+    sessionStorage.setItem("resArray", resultArray);
+
     let $c_after;
 
     for (var i = 0; i < resultArray.length; i++) {
@@ -117,6 +135,7 @@ const handlerClickResultBtn = () => {
 
     $(".c_after").removeClass("c_after");
 
+    $("#send_email_con").show();
     $("#result_con").show();
 
     $(".restart_btn_con").show();
@@ -128,7 +147,7 @@ const playSound = (fileName) => {
     const audio = document.getElementById(fileName);
 
     if (audio.paused) {
-        audio.volume = 0.3;
+        audio.volume = 0.5;
         audio.play();
     } else {
         audio.pause();
@@ -139,4 +158,31 @@ const playSound = (fileName) => {
 const handlerClickRestartBtn = () => {
     $(window).scrollTop(0);
     history.go(0);
+};
+
+const handlerClickSendEmailBtn = (email, res) => {
+    $.ajax({
+        type: "GET",
+        url:
+            "https://script.google.com/macros/s/AKfycby4P5y4xRROK1x9NL3qrGFyV7kXeyhMFvZAzY8sL_mKKWMf57I/exec",
+        data: {
+            email: email,
+            res: res,
+        },
+        beforeSend: function () {
+            $("#loading_con").show();
+        },
+        success: function (data) {
+            alert(
+                "결과가 전송되었습니다.\n작성해 주신 메일로 결과지를 보내드리겠습니다."
+            );
+            handlerClickRestartBtn();
+        },
+        error: function (data) {
+            alert("전송 에러입니다.\n잠시후 다시 시도해주세요.");
+        },
+        complete: function () {
+            $("#loading_con").hide();
+        },
+    });
 };
