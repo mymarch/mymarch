@@ -144,7 +144,7 @@
     text-align: center;
 }
 
-#email {
+#send_email_con input {
     width: 70vw;
     max-width: 500px;
     font-size: 17px;
@@ -152,6 +152,7 @@
     border: 1px solid #d9d9d9;
     border-radius: 5px;
     font-family: "Noto Sans KR", sans-serif !important;
+    margin: 10px 0px;
 }
 
 #result_con {
