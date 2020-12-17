@@ -26,8 +26,15 @@ $(document).on("click", "#restart_btn", function () {
 });
 
 $(document).on("click", "#send_email_btn", function () {
+    const name = $("#name").val();
     const email = $("#email").val();
     const res = sessionStorage.getItem("resArray");
+
+    if (name.replace(/ /gi, "") === "") {
+        alert("성함을 입력해주세요!");
+        $("#name").focus();
+        return;
+    }
 
     if (email.replace(/ /gi, "") === "") {
         alert("이메일을 입력해주세요!");
@@ -36,7 +43,7 @@ $(document).on("click", "#send_email_btn", function () {
     }
 
     if (confirm("결과를 전송하시겠습니까?")) {
-        handlerClickSendEmailBtn(email, res);
+        handlerClickSendEmailBtn(name, email, res);
     }
 });
 
@@ -160,12 +167,13 @@ const handlerClickRestartBtn = () => {
     history.go(0);
 };
 
-const handlerClickSendEmailBtn = (email, res) => {
+const handlerClickSendEmailBtn = (name, email, res) => {
     $.ajax({
         type: "GET",
         url:
             "https://script.google.com/macros/s/AKfycby4P5y4xRROK1x9NL3qrGFyV7kXeyhMFvZAzY8sL_mKKWMf57I/exec",
         data: {
+            name: name,
             email: email,
             res: res,
         },
