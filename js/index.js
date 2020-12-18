@@ -76,6 +76,7 @@ const handlerClickCircleAdd = (id) => {
 
     if (colorArray.length == 12) {
         $(".result_btn_con").show();
+        $(window).scrollTop(9999);
     } else {
         $(".result_btn_con").hide();
     }
