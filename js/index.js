@@ -47,6 +47,10 @@ $(document).on("click", "#send_email_btn", function () {
     }
 });
 
+$(document).on('click', '#close_btn', function(){
+    handlerClickCloseBtn();
+});
+
 const handlerClickCircleAdd = (id) => {
     //playSound("click_sound");
     let color = sessionStorage.getItem("selectArray");
