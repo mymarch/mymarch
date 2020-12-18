@@ -194,3 +194,7 @@ const handlerClickSendEmailBtn = (name, email, res) => {
         },
     });
 };
+
+const handlerClickCloseBtn = () => {
+    window.close();
+}
