@@ -184,7 +184,8 @@ const handlerClickSendEmailBtn = (name, email, res) => {
             alert(
                 "결과가 전송되었습니다.\n작성해 주신 메일로 결과지를 보내드리겠습니다."
             );
-            handlerClickRestartBtn();
+            hisotry.go(-1);
+            self.close();
         },
         error: function (data) {
             alert("전송 에러입니다.\n잠시후 다시 시도해주세요.");
