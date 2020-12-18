@@ -47,10 +47,6 @@ $(document).on("click", "#send_email_btn", function () {
     }
 });
 
-$(document).on("click", "#close_btn", function (e) {
-    handlerClickCloseBtn();
-});
-
 const handlerClickCircleAdd = (id) => {
     //playSound("click_sound");
     let color = sessionStorage.getItem("selectArray");
@@ -188,7 +184,7 @@ const handlerClickSendEmailBtn = (name, email, res) => {
             alert(
                 "결과가 전송되었습니다.\n작성해 주신 메일로 결과지를 보내드리겠습니다."
             );
-            window.close();
+            handlerClickCloseBtn();
         },
         error: function (data) {
             alert("전송 에러입니다.\n잠시후 다시 시도해주세요.");
