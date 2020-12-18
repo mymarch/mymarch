@@ -47,7 +47,7 @@ $(document).on("click", "#send_email_btn", function () {
     }
 });
 
-$(document).on('click', '#close_btn', function(){
+$(document).on("click", "#close_btn", function (e) {
     handlerClickCloseBtn();
 });
 
@@ -200,5 +200,5 @@ const handlerClickSendEmailBtn = (name, email, res) => {
 };
 
 const handlerClickCloseBtn = () => {
-    top.window.close();
+    history.go(-1);
 };
